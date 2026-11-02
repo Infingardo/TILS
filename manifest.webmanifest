@@ -1,0 +1,16 @@
+{
+  "name": "TILs nella mammella · Atlante pratico",
+  "short_name": "TILs",
+  "description": "Stima dei TILs stromali nel carcinoma mammario secondo l'International TILs Working Group, con esercizio alla cieca.",
+  "lang": "it",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f3f0",
+  "theme_color": "#263d50",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
