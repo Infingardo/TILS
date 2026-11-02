@@ -12,7 +12,7 @@ Web app per la valutazione dei **linfociti infiltranti lo stroma (sTILs)** nel c
 | Sezione | Contenuto |
 |---|---|
 | **Guida rapida** | Definizione degli sTILs, i tre passaggi (delimita, seleziona, stima), esclusioni, requisiti del campione |
-| **Referto e checklist** | Checklist in cinque punti prima della firma; generatore della frase di referto per pezzo operatorio, biopsia, malattia residua post-neoadiuvante e carcinoma in situ, con i limiti da segnalare |
+| **Referto e checklist** | Checklist in cinque punti prima della firma; generatore della frase di referto per pezzo operatorio, biopsia e malattia residua post-neoadiuvante, con i limiti da segnalare |
 | **Quando refertare** | Rilevanza per sottotipo (triplo negativo, HER2+, luminale), formato del dato, assenza di cut-off clinici validati |
 | **Neoadiuvante e in situ** | Regole operative per la malattia residua (letto tumorale residuo come nell'RCB) e per il carcinoma in situ (stroma periduttale, regola dei 2 campi ad alto ingrandimento) |
 | **Esercizio alla cieca** | Immagine di riferimento casuale: stima, poi confronto con il valore del Working Group (tolleranza ±10 punti, scarto medio) |
@@ -60,7 +60,7 @@ A web app for scoring **stromal tumour-infiltrating lymphocytes (sTILs)** in bre
 | Section | What it does |
 |---|---|
 | **Quick guide** | sTILs definition, the three steps (delineate, select, estimate), exclusions, specimen requirements |
-| **Report & checklist** | Five-point sign-out checklist; report sentence builder for resections, core biopsies, post-neoadjuvant residual disease and carcinoma in situ, with limitations |
+| **Report & checklist** | Five-point sign-out checklist; report sentence builder for resections, core biopsies and post-neoadjuvant residual disease, with limitations |
 | **When to report** | Relevance by subtype (triple-negative, HER2+, luminal), reporting format, no validated clinical cut-offs |
 | **Neoadjuvant & in situ** | Practical rules for residual disease (residual tumour bed as in RCB) and carcinoma in situ (periductal stroma, 2 high-power field rule) |
 | **Blind exercise** | Random reference image: estimate first, then compare with the Working Group value (±10-point tolerance, mean difference) |

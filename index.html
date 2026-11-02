@@ -160,7 +160,6 @@ html[data-lang=en] [lang=it]{display:none!important}
 <option value="res" data-it="Carcinoma invasivo · pezzo operatorio" data-en="Invasive carcinoma · resection"></option>
 <option value="core" data-it="Carcinoma invasivo · biopsia" data-en="Invasive carcinoma · core biopsy"></option>
 <option value="rd" data-it="Malattia residua dopo neoadiuvante" data-en="Residual disease after neoadjuvant therapy"></option>
-<option value="cis" data-it="Carcinoma in situ" data-en="Carcinoma in situ"></option>
 </select>
 <label for="r-val"><span lang="it">sTILs (%)</span><span lang="en">sTILs (%)</span></label>
 <input id="r-val" type="number" min="0" max="100" step="5" inputmode="numeric" placeholder="30">
@@ -383,10 +382,9 @@ const T={
   over:(d,s)=>`Scarto ${d} punti: ${s?'sovrastima':'sottostima'} oltre ±10. Ricontrolla denominatore stromale e TILs intraepiteliali.`,
   score:(n,m)=>n?`Esercizi svolti: ${n} · scarto medio: ${m} punti`:'Esercizi svolti: 0',
   imgAlt:v=>`Immagine di riferimento sTILs ${v}%`,
-  sent:{res:'Linfociti infiltranti lo stroma tumorale (sTILs, metodo International TILs Working Group): {v}%.',
-        core:'Linfociti infiltranti lo stroma tumorale (sTILs, metodo International TILs Working Group): {v}%, valutati su biopsia.',
-        rd:'Linfociti infiltranti lo stroma del letto tumorale residuo (sTILs, raccomandazioni International TILs Working Group per la malattia residua): {v}%.',
-        cis:'Linfociti infiltranti lo stroma periduttale del carcinoma in situ (sTILs, metodo International TILs Working Group): {v}%.'},
+  sent:{res:'sTILs (International TILs Working Group): {v}%.',
+        core:'sTILs (International TILs Working Group): {v}%, valutati su biopsia.',
+        rd:'sTILs nel letto tumorale residuo (International TILs Working Group): {v}%.'},
   lim:{stroma:'stroma scarso',art:'artefatti tecnici',small:'campione di dimensioni limitate',het:'marcata eterogeneità della distribuzione'},
   limPre:'Valutazione limitata da ',coreNote:'La biopsia può non rappresentare l\'eterogeneità del tumore.',and:' e '},
  en:{title:'TILs in breast cancer · Practical atlas',
@@ -397,10 +395,9 @@ const T={
   over:(d,s)=>`Difference ${d} points: ${s?'overestimate':'underestimate'} beyond ±10. Re-check the stromal denominator and intraepithelial TILs.`,
   score:(n,m)=>n?`Exercises done: ${n} · mean difference: ${m} points`:'Exercises done: 0',
   imgAlt:v=>`sTILs reference image ${v}%`,
-  sent:{res:'Stromal tumour-infiltrating lymphocytes (sTILs, International TILs Working Group method): {v}%.',
-        core:'Stromal tumour-infiltrating lymphocytes (sTILs, International TILs Working Group method): {v}%, assessed on core biopsy.',
-        rd:'Stromal tumour-infiltrating lymphocytes in the residual tumour bed (sTILs, International TILs Working Group recommendations for residual disease): {v}%.',
-        cis:'Periductal stromal tumour-infiltrating lymphocytes in carcinoma in situ (sTILs, International TILs Working Group method): {v}%.'},
+  sent:{res:'sTILs (International TILs Working Group): {v}%.',
+        core:'sTILs (International TILs Working Group): {v}%, assessed on core biopsy.',
+        rd:'sTILs in the residual tumour bed (International TILs Working Group): {v}%.'},
   lim:{stroma:'scant stroma',art:'technical artefacts',small:'limited sample size',het:'marked heterogeneity of distribution'},
   limPre:'Assessment limited by ',coreNote:'A core biopsy may not reflect tumour heterogeneity.',and:' and '}
 };
@@ -439,7 +436,6 @@ function buildReport(){
   let s=T[L].sent[t].replace('{v}',Math.round(+v));
   const lims=limIds.filter(k=>$('l-'+k).checked).map(k=>T[L].lim[k]);
   if(lims.length){const j=lims.length>1?lims.slice(0,-1).join(', ')+T[L].and+lims.at(-1):lims[0];s+=' '+T[L].limPre+j+'.'}
-  if(t==='core')s+=' '+T[L].coreNote;
   o.textContent=s;o.dataset.ok='1';
 }
 ['r-type','r-val',...limIds.map(k=>'l-'+k)].forEach(id=>{$(id).addEventListener('input',buildReport);$(id).addEventListener('change',buildReport)});
